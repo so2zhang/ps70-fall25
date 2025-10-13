@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px;
 }
 
+h2{
+  margin-left: 25px;
+}
+
 h3 {
   border-bottom: 2px solid #8b6f47;
   padding-bottom: 8px;
@@ -385,3 +389,10 @@ nav { background: transparent; border: none; box-shadow: none; }
 .navbar-nav .nav-link { border: none !important; }
 
 /* Since we removed <h4> from nav, keep h4 styling for content only */
+h4 { 
+  color: #5d3a1f; 
+  font-weight: 500; 
+  letter-spacing: 0.3px; 
+  padding-left: 0; 
+  border: none;      /* ensure no vertical line appears anywhere unless you want it */
+}
