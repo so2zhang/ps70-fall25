@@ -374,3 +374,21 @@ code {
   background: transparent;
   z-index: 1;
 }
+
+/* Make nav blend with page, and ensure no borders */
+nav { background: transparent; border: none; box-shadow: none; }
+
+/* Your title spacing (adjust as you like) */
+.nav-title { color: #3d2914; font-weight: 600; }
+
+/* Kill any accidental borders on nav links */
+.navbar-nav .nav-link { border: none !important; }
+
+/* Since we removed <h4> from nav, keep h4 styling for content only */
+h4 { 
+  color: #5d3a1f; 
+  font-weight: 500; 
+  letter-spacing: 0.3px; 
+  padding-left: 0; 
+  border: none;      /* ensure no vertical line appears anywhere unless you want it */
+}
