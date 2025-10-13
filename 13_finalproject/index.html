@@ -23,9 +23,100 @@
 <div class="textcontainer">
 <p class="margin"></p>
 
-<h3>Final Project: [INSERT FINAL PROJECT HERE]</h3>
+<h3>Final Project: Smart Water Harvester w/ Modular Material Tiles</h3>
+<p>
+  My final project is a <b>Smart Fog Harvester</b> designed to explore how <b>material properties, surface texture, and geometry</b> affect water collection. 
+  Instead of focusing purely on automation, the project centers the <b>tactile and physical behavior of materials</b>—how kerfing, wettability, and surface design shape efficiency.
+  </p>
+  
+  <p>
+  The harvester consists of a <b>laser-cut frame</b> that holds multiple interchangeable <b>tiles</b>. Each tile tests a different surface treatment or material behavior. 
+  An Arduino-based sensing system measures the water mass collected over time, as well as ambient humidity and temperature. 
+  If time allows, I’ll implement a <b>servo-controlled tilting mechanism</b> to optimize the collection angle automatically.
+  </p>
+  
+  <h4>Tile Designs (Materials Experiments)</h4>
+  
+  <ol>
+    <li><b>Kerfed Wood Fin Tile</b> — Thin birch sheet laser-cut with varying kerf densities so the panel naturally curves into spines. 
+    Hydrophilic/hydrophobic stripes will be created using PVA glue (hydrophilic) and silicone spray (hydrophobic). 
+    This explores how curvature and wettability patterns guide droplet flow.</li>
+  
+    <li><b>Ribbed PLA Panel</b> — A 3D-printed PLA sheet with diagonal V-grooves and ridges that channel droplets downward. 
+    Some regions will be lightly sanded (more hydrophilic), others left smooth (more hydrophobic), testing how groove direction and surface roughness affect yield.</li>
+  
+    <li><b>Flexible Mesh Tile</b> — A 3D-printed TPU mesh or nylon fabric framed in acrylic. 
+    I’ll coat mesh nodes with PVA to encourage droplet nucleation and leave strands untreated or silicone-coated for quick release. 
+    This examines the balance between droplet growth and shedding.</li>
+  
+    <li><b>Beetle-Back Dot Tile</b> — A flat PLA sheet with hemispherical bumps inspired by the Namib desert beetle. 
+    Hydrophilic bump tops and hydrophobic valleys will demonstrate how contrasting wettability drives droplet movement.</li>
+  </ol>
+  
+  <p>
+  Each tile mounts at a ~45° angle on a common frame above a 3D-printed V-gutter that funnels collected water into a small reservoir resting on a <b>load cell</b>. 
+  The setup allows A/B testing by swapping tiles under identical fog and airflow conditions.
+  </p>
+  
+  <h4>Electronics and Control System</h4>
+  <ul>
+    <li><b>Arduino Nano</b> — central microcontroller</li>
+    <li><b>HX711 + Load Cell</b> — measures harvested water mass (grams)</li>
+    <li><b>DHT22 Sensor</b> — records humidity and temperature for each trial</li>
+    <li><b>Servo Motor (SG90)</b> — adjusts panel tilt angle (for optimization mode)</li>
+    <li><b>SSD1306 OLED Display</b> — shows live yield rate, humidity, and temperature</li>
+    <li><b>Fan (PWM-controlled)</b> — provides consistent airflow across runs</li>
+    <li><b>Optional MicroSD Card Module</b> — logs mass and environmental data over time</li>
+  </ul>
+  
+  <p>
+  In basic mode, the system logs water yield (g/min) and environmental conditions over time. 
+  In advanced mode, the Arduino automatically adjusts the tilt angle to maximize collection efficiency, then displays and stores results.
+  </p>
+  
+  <h4>Bill of Materials</h4>
+  
+  <table border="1" cellpadding="4">
+    <tr><th>Component</th><th>Quantity</th><th>Source / Material</th></tr>
+    <tr><td>Arduino Nano</td><td>1</td><td>Electronics stock</td></tr>
+    <tr><td>HX711 Load Cell Amplifier</td><td>1</td><td>Electronics stock</td></tr>
+    <tr><td>Load Cell (1–5 kg)</td><td>1</td><td>Amazon / PS70 stock</td></tr>
+    <tr><td>DHT22 Sensor</td><td>1</td><td>PS70 stock</td></tr>
+    <tr><td>SG90 Servo Motor</td><td>1</td><td>PS70 stock</td></tr>
+    <tr><td>SSD1306 OLED Display</td><td>1</td><td>PS70 stock</td></tr>
+    <tr><td>5V Fan (PWM)</td><td>1</td><td>PS70 stock</td></tr>
+    <tr><td>MicroSD Card Module + Card</td><td>1 (optional)</td><td>PS70 stock</td></tr>
+    <tr><td>Laser-cut Birch Plywood (1/8")</td><td>~1 sheet</td><td>Shop stock</td></tr>
+    <tr><td>PLA Filament</td><td>~100 g</td><td>Shop stock</td></tr>
+    <tr><td>TPU Filament or Nylon Mesh</td><td>~50 g / 6×6” piece</td><td>Shop stock</td></tr>
+    <tr><td>PVA Glue, Silicone Spray</td><td>—</td><td>Shop / hardware store</td></tr>
+    <tr><td>Wires, Breadboard, Jumper Cables</td><td>—</td><td>Lab stock</td></tr>
+  </table>
+  
+  <h4>3D Model Overview</h4>
+  <p>
+  The 3D model shows the fog harvester’s frame, mounting bay for interchangeable tiles, servo-controlled hinge, 
+  and a lower gutter channel leading into the load cell platform. The modular structure allows rapid swapping of material panels for comparative testing. 
+  Each component will be laser-cut or 3D-printed using Fusion 360 and assembled with screws and press-fit joints.
+  </p>
+  <h4>Timeline (Weeks 5–13)</h4>
+<table border="1" cellpadding="4">
+  <tr><th>Week</th><th>Goal</th></tr>
+  <tr><td>Week 5</td><td>Finalize conceptual design, confirm electronics list, begin CAD modeling of frame and two initial tiles.</td></tr>
+  <tr><td>Week 6</td><td>Fabricate first tile prototypes (kerfed wood + PLA ribbed panel). Test fit gutter and load-cell base.</td></tr>
+  <tr><td>Week 7</td><td>Assemble electronics on breadboard: Arduino Nano, HX711 + load cell, DHT22, and OLED. Verify stable sensor readings.</td></tr>
+  <tr><td>Week 8</td><td>Add servo-driven tilt system and fan control. Write preliminary Arduino sketch for data logging and angle sweeps.</td></tr>
+  <tr><td>Week 9</td><td>Fabricate remaining material tiles (TPU mesh + beetle-back PLA). Begin sequential A/B fog tests and calibration curves.</td></tr>
+  <tr><td>Week 10</td><td>Implement data-logging storage (MicroSD) and automatic “best-angle” optimization routine. Analyze early results.</td></tr>
+  <tr><td>Week 11</td><td>Refine fabrication: improve tile coatings, add consistent fog-field jig, tidy wiring for presentation-readiness.</td></tr>
+  <tr><td>Week 12</td><td>Parallel test phase: measure two tiles simultaneously; finalize data visualization scripts/graphs for website.</td></tr>
+  <tr><td>Week 13</td><td>Prepare final demonstration, presentation slides, and full documentation video. Upload final data and reflections to site.</td></tr>
+</table>
 
-
+<p>
+  This project combines my interest in <b>material experimentation</b> and <b>environmental functionality</b>. 
+  By focusing on the physical behavior of different surfaces and geometries, I aim to build an intelligent but tangible system—one where smartness emerges not only from code, but from the material itself.
+  </p>
 </div>
 </xmp>
 </body>
