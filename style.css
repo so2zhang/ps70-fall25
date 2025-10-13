@@ -62,11 +62,12 @@ a:hover {
 }
 
 nav {
-  background-color: #faf9f7;
+  background-color: transparent; /* blend with the page */
   color: #3d2914;
-  padding: 20px 0px;
-  border-bottom: none;
+  padding: 0; /* remove the thick band look */
   margin: 0;
+  border: none;
+  box-shadow: none; /* ensure no shadow or border below */
 }
 
 .about-image {
@@ -109,7 +110,7 @@ nav {
 }
 
 #btn {
-  border: 1px solid #8b6f47;
+  border: none;
   border-radius: 0;
   padding: 8px 16px;
   background-color: #8b6f47;
