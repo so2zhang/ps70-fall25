@@ -79,9 +79,9 @@ nav {
 
 .navbar-nav {
   display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  margin-right: 0;
+  justify-content: center;
+  gap: 20px;
+  border: none;
 }
 
 .nav-title{
@@ -92,17 +92,12 @@ nav {
   margin-left: 0;
 }
 
+
 .nav-link {
+  background: transparent;
   border: none;
-  border-radius: 0;
-  padding: 8px 16px;
-  background-color: transparent;
-  color: #3d2914;
-  transition: all 0.3s ease;
+  padding: 6px 10px;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  font-size: 16px;
-  text-decoration: none;
 }
 
 .nav-link:hover {
