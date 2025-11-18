@@ -27,186 +27,48 @@
 
 <h4>Assignment: Build a Drawing Robot</h4>
 
-<section id="overview">
-  <h1>2+ DoF Drawing Machine — "[TODO: Project Name]"</h1>
-  <p class="tagline">"Telephone-loop" plotter: the pen draws on an iPad; a live image feed is re-ingested to generate the next pass until the output degrades.</p>
+  <h5>The Telephone-loop Plotter</h5>
+  <h6>
+    Project Overview and Inspiration
+  </h6>
+  <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface.
+    What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
+    
+    Key Contributions:
+    
+    A novel recursive drawing system that re-ingests its own outputs.
+    
+    Integration of 2-axis stepper control with a servo-driven end effector.
+    
+    Software pipeline connecting digital drawing input → web server → machine motion.</p>
 
-  <ul class="meta">
-    <li><strong>Team:</strong> [TODO: team_name] — [TODO: members_roles]</li>
-    <li><strong>Mechanism/DoF:</strong> [TODO: mechanism_dof]</li>
-    <li><strong>End-Effector:</strong> [TODO: end_effector]</li>
-    <li><strong>Homing:</strong> [TODO: homing_method]</li>
-    <li><strong>Work Envelope (mm):</strong> [TODO: work_envelope]</li>
-    <li><strong>Software Control:</strong> [TODO: control_mode] ([TODO: rationale])</li>
-  </ul>
+   
+   <h6>End Effector Design</h6> 
+   <p> Our end effector uses a servo-controlled Apple Pencil mount for precise up-and-down motion. While mechanically similar 
+    to the normal pen plotter, its novelty (Bobby approved!)lies in drawing directly on an iPad rather than paper, creating the digital–physical feedback loop.
+   </p>
+   <video style = "width: 65%" src="./end effector.mov" controls></video> 
 
-  <div class="video">
-    <a class="video-thumb" href="[TODO: demo_video_url]" target="_blank" rel="noopener">
-      <img src="[TODO: demo_thumbnail_src]" alt="Demo video thumbnail (30s)" />
-      <span>Watch 30s Demo</span>
-    </a>
-    <p class="muted">Viewing guide: homing → first pass → Nth-generation re-render.</p>
-  </div>
-</section>
+   <h6>Homing Sequence</h6>
+   <p>
+    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—one at the base of the gantry and another at the base of the second axis—to define the machine’s zero position. 
+    Components would then trigger the switches, allowing the plotter to reset accurately each time it powers on and maintain precise alignment between digital and physical coordinates.
+  </p>
 
-<section id="motivation">
-  <h2>Motivation & Inspiration</h2>
-  <p>[TODO: motivation_short] Reference precedents: AxiDraw/pen-plotter lineage and class examples. Our twist is a closed loop: iPad canvas → camera capture → image processing → new toolpath, repeated, akin to "telephone".</p>
-</section>
+   <h6>Position Mapping</h6>
+   <p> 
+  Our position mapping system translates digital drawing coordinates from the server
+   into precise motor movements on the plotter. Each command received through the WebSocket interface is converted into corresponding X and Y step values, 
+   allowing the Apple Pencil to trace the same path on the iPad surface. Because the machine is homed at startup, every position command is mapped relative to a fixed physical origin, ensuring that the digital input and the physical motion 
+   remain perfectly synchronized throughout each iterative “telephone-loop” pass.
+   </p>
 
-<section id="preparation">
-  <h2>Preparation of Parts</h2>
-  <p>We sourced/printed structural components [TODO: structure_source]. Electronics: [TODO: electronics]. Provide BOM below.</p>
-  <figure>
-    <img src="[TODO: img_prep_src]" alt="Laid out parts prior to assembly" />
-    <figcaption>Labeled and staged parts for assembly. [TODO: callouts A/B/C]</figcaption>
-  </figure>
-</section>
+   <h6>Code Implementation</h6>
+  
+  <h6>Iteration Process & Steps</h6>
+     <p>Issues we encountered: making the belt tight enough to get the motion to be super smooth</p>
+     <p>Exploded a capacitator.</p>
 
-<section id="assembly">
-  <h2>Assembly</h2>
-  <p>[TODO: assembly_summary]</p>
-  <figure>
-    <img src="[TODO: img_assembly_src]" alt="Frame and XY assembly in progress" />
-    <figcaption>Frame & XY assembly — belts, idlers, carriage alignment.</figcaption>
-  </figure>
-  <figure>
-    <img src="[TODO: img_electronics_src]" alt="Electronics wiring and mounting" />
-    <figcaption>Electronics: MCU, drivers, power, homing sensors, end-effector.</figcaption>
-  </figure>
-</section>
-
-<section id="software">
-  <h2>Software</h2>
-  <ul>
-    <li><strong>Control Mode:</strong> [TODO: control_mode] — [TODO: tradeoffs]</li>
-    <li><strong>Data Flow:</strong> stroke sampling → scaling → kinematics → step/dir streaming.</li>
-    <li><strong>Loop-Back Pipeline:</strong> camera capture → preprocess (e.g., edge/threshold) → path plan → draw → re-capture → repeat; degradation from downsampling/noise/pen mechanics.</li>
-  </ul>
-
-  <details>
-    <summary>Code Excerpt — Streaming Loop (≤20 lines)</summary>
-    <pre><code class="language-js">[TODO: code_streaming]
-// Example structure:
-// while (drawing) {
-//   captureImage();
-//   processEdges();
-//   generatePath();
-//   streamSteps();
-//   delay();
-// }</code></pre>
-  </details>
-  <details>
-    <summary>Code Excerpt — Pen Up/Down or Homing (≤20 lines)</summary>
-    <pre><code class="language-cpp">[TODO: code_pen_or_home]
-// Example structure:
-// void home() {
-//   while (!limit_switch) {
-//     step_backward();
-//   }
-//   set_origin();
-// }</code></pre>
-  </details>
-</section>
-
-<section id="calibration">
-  <h2>Calibration & Homing</h2>
-  <ol>
-    <li>Homing via [TODO: homing_method] to guarantee repeatable origin.</li>
-    <li>Steps/mm calibration; belt tensioning; axis squareness; pen offset.</li>
-    <li>Camera–iPad alignment and scale mapping.</li>
-  </ol>
-
-  <h3>Circle Precision Test</h3>
-  <p>Command a circle of radius <code>R</code> and mark its center; measure actual radius <code>R_actual</code> and center offset <code>d</code>. Percent error:
-    <code>|(R_actual − R)| / R × 100%</code></p>
-
-  <table class="compact">
-    <thead><tr><th>Metric</th><th>Commanded</th><th>Measured</th><th>Error</th></tr></thead>
-    <tbody>
-      <tr><td>Radius (mm)</td><td><input id="R" type="number" placeholder="R" step="0.1"/></td><td><input id="Ract" type="number" placeholder="R_actual" step="0.1"/></td><td id="Re">—</td></tr>
-      <tr><td>Center offset (mm)</td><td>0</td><td><input id="d" type="number" placeholder="d" step="0.1"/></td><td id="de">—</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="iteration">
-  <h2>Iteration Journal</h2>
-  <ul class="timeline">
-    <li><strong>First Tuesday:</strong> Brainstormed telephone-loop drawer concept; parts prep (de-footing, initial fasteners).</li>
-    <li><strong>Next Thursday:</strong> Full dry-fit; screw mismatch/tolerance issues → added washers; wrote quick test code.</li>
-    <li><strong>Second Tuesday:</strong> Basic assembly complete; belt routed; wheels assembled and spinning freely.</li>
-    <li><strong>Second Thursday:</strong> Servos working after extensive tests; blew a capacitor; swapped a failed servo driver; completed wiring; pen-lift working; major debugging.</li>
-    <li><strong>Third Tuesday:</strong> [TODO — add]</li>
-    <li><strong>Third Thursday:</strong> [TODO — add]</li>
-  </ul>
-  <figure>
-    <img src="[TODO: img_iteration_src]" alt="Iteration snapshots" />
-    <figcaption>Key iteration snapshots across build and software milestones.</figcaption>
-  </figure>
-</section>
-
-<section id="results">
-  <h2>Results & Discussion</h2>
-  <ul>
-    <li><strong>Draws well:</strong> [TODO: strengths]</li>
-    <li><strong>Challenging:</strong> [TODO: weaknesses] (e.g., backlash, pen compliance, arc smoothness).</li>
-    <li><strong>Loop Degradation:</strong> Composite generations 1→N; optional SSIM/edge-length vs generation.</li>
-  </ul>
-  <figure>
-    <img src="[TODO: img_generations_src]" alt="Successive generations of telephone-loop drawings" />
-    <figcaption>Telephone-loop generations illustrating progressive degradation.</figcaption>
-  </figure>
-</section>
-
-<section id="pitch">
-  <h2>Students' Choice Pitch</h2>
-  <ul>
-    <li><strong>Sophistication of Output:</strong> [TODO: pitch_output]</li>
-    <li><strong>Novel End-Effector / Technique:</strong> [TODO: pitch_novelty]</li>
-  </ul>
-</section>
-
-<section id="future">
-  <h2>Future Plans</h2>
-  <ul>
-    <li>Bezier/arc interpolation for smooth curves.</li>
-    <li>Dual-tool or liquid end-effector variant.</li>
-    <li>Improved homing sensor & repeatability study.</li>
-    <li>Closed-loop steppers or encoders.</li>
-  </ul>
-</section>
-
-<section id="checklist">
-  <h2>Grading Checklist</h2>
-  <ul>
-    <li>[ ] Calibration & repeatable home</li>
-    <li>[ ] Precision: circle + center; percent error computed</li>
-    <li>[ ] 2+ DoF drawing demonstrated</li>
-    <li>[ ] Novel end-effector described</li>
-    <li>[ ] ~30s demo video linked</li>
-    <li>[ ] Single-page consolidated documentation</li>
-    <li>[ ] Iteration process captured with images</li>
-  </ul>
-</section>
-
-<script>
-(function(){
-  const $ = id => document.getElementById(id);
-  const fmt = n => isFinite(n) ? (Math.abs(n)>=100? n.toFixed(1): n.toFixed(2)) : '—';
-  function recalc(){
-    const R = parseFloat(($('R')||{}).value);
-    const Ra = parseFloat(($('Ract')||{}).value);
-    const d = parseFloat(($('d')||{}).value);
-    const per = (isFinite(R)&&isFinite(Ra)&&R!==0) ? Math.abs((Ra-R)/R)*100 : NaN;
-    const Re = document.getElementById('Re'); if (Re) Re.textContent = isFinite(per)? fmt(per)+'%':'—';
-    const De = document.getElementById('de'); if (De) De.textContent = isFinite(d)? fmt(d)+' mm':'—';
-  }
-  ['R','Ract','d'].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener('input', recalc); });
-})();
-</script>
-
-<!-- DRAWING-MACHINE:DOC-END -->
 
 </div>
 </xmp>
