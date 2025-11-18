@@ -33,16 +33,12 @@
   </h6>
   <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface.
     What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
-    
-    Key Contributions:
-    
-    A novel recursive drawing system that re-ingests its own outputs.
-    
-    Integration of 2-axis stepper control with a servo-driven end effector.
-    
-    Software pipeline connecting digital drawing input → web server → machine motion.</p>
+    <figure>
+      <video style = "width: 65%" src="./end effector.mov" controls></video> 
+      <figcaption>Demo Video.</figcaption>
+    </figure>
+  </p>   
 
-   
    <h6>End Effector Design</h6> 
    <p> Our end effector uses a servo-controlled Apple Pencil mount for precise up-and-down motion. While mechanically similar 
     to the normal pen plotter, its novelty (Bobby approved!)lies in drawing directly on an iPad rather than paper, creating the digital–physical feedback loop.
