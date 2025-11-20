@@ -27,24 +27,26 @@
 
 <h4>Assignment: Build a Drawing Robot</h4>
 
-  <h5>The Telephone-loop Plotter</h5>
+  <h5>The Telephone-L oop Plotter (AKA Descent Into Madness) </h5>
   <h6>
     Project Overview and Inspiration
   </h6>
   <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface. What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.</p>
-  <video style = "width: 50%;" src="./Demo.mov" controls></video> 
-  <img style="width: 500px; height: auto;" src="Plotter.jpg" alt="Final">
-  <p>Final Demonstration (Circle): <a href="https://youtu.be/68NL08yOR-4" target="_blank">https://youtu.be/68NL08yOR-4</a></p>
-  <p>Final Demonstration (Spiral): <a href="https://youtu.be/6Iterdpl_lc" target="_blank">https://youtu.be/6Iterdpl_lc</a></p>
+  <iframe width="1038" height="584" src="https://www.youtube.com/embed/6Iterdpl_lc" title="DIM Spiral" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
   <h6>Initial Steps & Mechanism</h6>
   <p>We first inventoried the provided parts—rails, three servos, and several 3D printed mounts. Using those components we built the base 2D rail system that every group started with.</p>
-  <p>X-axis motion demo: <a href="https://youtube.com/shorts/-XhtgWXwWJQ?feature=share" target="_blank">https://youtube.com/shorts/-XhtgWXwWJQ?feature=share</a></p>
-  <p>X- and Y-axis motion demo: <a href="https://youtube.com/shorts/o2Ki_xpkRjw?feature=share" target="_blank">https://youtube.com/shorts/o2Ki_xpkRjw?feature=share</a></p>
+  <p>X-axis motion demo: </p>
+
+  <iframe width="409" height="727" src="https://www.youtube.com/embed/-XhtgWXwWJQ" title="horizontal motion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+  <p>X- and Y-axis motion demo: </p>
+  <iframe width="409" height="727" src="https://www.youtube.com/embed/o2Ki_xpkRjw" title="x and y axis both moving" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ 
   <h6>End Effector Design</h6> 
   <p>Our end effector uses a servo-controlled Apple Pencil mount for precise up-and-down motion. While mechanically similar to the normal pen plotter, its novelty (Bobby approved!) lies in drawing directly on an iPad rather than paper, creating the digital–physical feedback loop.</p>
-  <p>Servo for end effector: <a href="https://youtube.com/shorts/1FHGnH5b_gI?feature=share" target="_blank">https://youtube.com/shorts/1FHGnH5b_gI?feature=share</a></p>
+  <p>Servo for end effector: </p>
   <video style = "width: 50%;" src="./End_Effector.MOV" controls></video> 
 
   <h6>Homing Sequence</h6>
@@ -55,19 +57,27 @@
       <img style="width: 250px; height: auto;" src="hinge2.JPG" alt="Hinge 2 - limit switch placement">
     </div>
   </p>
-  <p>Homing interface photo: [TODO]</p>
-  <p>Homing one axis: <a href="https://youtu.be/l308SvD5WA4" target="_blank">https://youtu.be/l308SvD5WA4</a></p>
-  <p>Homing both axes: <a href="https://youtu.be/FT1-rDYsAK4" target="_blank">https://youtu.be/FT1-rDYsAK4</a></p>
-  <p>Homing to origin: <a href="https://youtube.com/shorts/5BQX1-Gi6po?feature=share" target="_blank">https://youtube.com/shorts/5BQX1-Gi6po?feature=share</a></p>
+  <p>Homing interface photo: </p>
+  <img style="width: 250px; height: auto;" src="Homing_Interface.jpg" alt="Homing interface photo">
+  
+  <p>Homing one axis:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/l308SvD5WA4" title="Homing one axis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p>Homing both axes:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/FT1-rDYsAK4" title="Homing both axes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p>Homing to origin:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/5BQX1-Gi6po?feature=share" title="Homing to origin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <video style = "width: 50%;" src="./homing.mov" controls></video> 
   <p>Interactive settings on the iPad mimic CNC mill controls—top-left, top-right, etc.—and allow incremental nudging to set the desired origin. Calibration values are saved in the web interface so you don’t need to rehome every session.</p>
 
 
   <h6>Position Mapping</h6>
   <p>Our position mapping system translates digital drawing coordinates from the server into precise motor movements on the plotter. Each command received through the WebSocket interface is converted into corresponding X and Y step values, allowing the Apple Pencil to trace the same path on the iPad surface. Because the machine is homed at startup, every position command is mapped relative to a fixed physical origin, ensuring that the digital input and the physical motion remain perfectly synchronized throughout each iterative “telephone-loop” pass. We initially tested the code with pen-and-paper to prove the concept, then switched to the iPad and Apple Pencil once the firmware was stable.</p>
-  <p>Paper-and-pencil test: <a href="https://youtube.com/shorts/msF1RytKKVE?feature=share" target="_blank">https://youtube.com/shorts/msF1RytKKVE?feature=share</a></p>
-  <p>Slow run of final design: <a href="https://youtube.com/shorts/_GHZhbSnvcE?feature=share" target="_blank">https://youtube.com/shorts/_GHZhbSnvcE?feature=share</a></p>
-  <p>Multiple iteration run: <a href="https://youtube.com/shorts/9Jux6oXYT88?feature=share" target="_blank">https://youtube.com/shorts/9Jux6oXYT88?feature=share</a></p>
+  <p>Paper-and-pencil test:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/msF1RytKKVE?feature=share" title="Paper and pencil test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p>Slow run of final design:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/_GHZhbSnvcE?feature=share" title="Slow run final design" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p>Multiple iteration run:</p>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/9Jux6oXYT88?feature=share" title="Multiple iteration run" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
    <h6>Code Implementation</h6>
     <p>  
