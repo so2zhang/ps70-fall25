@@ -34,7 +34,7 @@
   <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface.
     What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
       <video style = "width: 65%" src="./Demo.mov" controls></video> 
-<img style="width:100px; height:auto;" src="Mounted_Final.JPG" class="about-image">
+<img style="width:200px; height:auto; transform: rotate(-90deg);" src="Mounted_Final.JPG" alt="Mounted final assembly">
 
   </p>   
 
@@ -46,10 +46,12 @@
 
     <h6>Homing Sequence</h6>
    <p>
-    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—see below photos—to define the machine’s zero position. 
+    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—see below photos—to define the machine's zero position. 
     Components would then trigger the switches, allowing the plotter to reset accurately each time it powers on and maintain precise alignment between digital and physical coordinates.
-      <img src="hinge1.JPG" alt="Our plotter drawing on an iPad">
-            <img src="hinge2.JPG" alt="Our plotter drawing on an iPad">
+      <div style="display: flex; gap: 15px; align-items: flex-start;">
+        <img style="width: 40%; height: auto;" src="hinge1.JPG" alt="Hinge 1 - limit switch placement">
+        <img style="width: 40%; height: auto;" src="hinge2.JPG" alt="Hinge 2 - limit switch placement">
+      </div>
 
       <video style = "width: 65%" src="./homing.mov" controls></video> 
   </p>
