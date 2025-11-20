@@ -34,8 +34,8 @@
   <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface.
     What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
   </p>   
-  <img style="width: 250px; height: auto;" src="Mounted_Final.JPG" alt="Final">
   <video style = "width: 50%; display: block; margin: 0 auto;" src="./Demo.mov" controls></video> 
+  <img style="width: 250px; height: auto;" src="Mounted_Final.JPG" alt="Final">
 
 
    <h6>End Effector Design</h6> 
@@ -56,7 +56,7 @@
 
 
    <h6>Position Mapping</h6>
-   <p> 
+   <p>  
   Our position mapping system translates digital drawing coordinates from the server
    into precise motor movements on the plotter. Each command received through the WebSocket interface is converted into corresponding X and Y step values, 
    allowing the Apple Pencil to trace the same path on the iPad surface. Because the machine is homed at startup, every position command is mapped relative to a fixed physical origin, ensuring that the digital input and the physical motion 
