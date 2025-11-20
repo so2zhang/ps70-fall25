@@ -33,21 +33,23 @@
   </h6>
   <p>The Telephone-Loop Plotter reimagines the childhood game of telephone through iterative, mechanical drawing. Using a combination of stepper and servo motors mounted on a 3D-printed frame, the plotter draws on an iPad surface.
     What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
-      <video style = "width: 65%" src="./end effector.mov" controls></video> 
+      <video style = "width: 65%" src="./Demo.mov" controls></video> 
   </p>   
 
    <h6>End Effector Design</h6> 
    <p> Our end effector uses a servo-controlled Apple Pencil mount for precise up-and-down motion. While mechanically similar 
     to the normal pen plotter, its novelty (Bobby approved!)lies in drawing directly on an iPad rather than paper, creating the digital–physical feedback loop.
    </p>
-   <video style = "width: 65%" src="./end effector.mov" controls></video> 
+   <video style = "width: 65%" src="./End_Effector.mov" controls></video> 
 
     <h6>Homing Sequence</h6>
    <p>
-    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—one at the base of the gantry and another at the base of the second axis—to define the machine’s zero position. 
+    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—see below photos—to define the machine’s zero position. 
     Components would then trigger the switches, allowing the plotter to reset accurately each time it powers on and maintain precise alignment between digital and physical coordinates.
-      <img src="images/plotter.jpg" alt="Our plotter drawing on an iPad">
-      <video style = "width: 65%" src="./end effector.mov" controls></video> 
+      <img src="images/hinge1.JPG" alt="Our plotter drawing on an iPad">
+            <img src="images/hinge2.JPG" alt="Our plotter drawing on an iPad">
+
+      <video style = "width: 65%" src="./homing.mov" controls></video> 
   </p>
 
    <h6>Position Mapping</h6>
