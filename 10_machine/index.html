@@ -35,7 +35,9 @@
     What’s drawn is transmitted via a live server connection — not through a camera — to a website interface, where the line data is reprocessed into new motion commands. The result is a feedback loop: each drawing is redrawn, reinterpreted, and slightly degraded over multiple cycles, echoing how messages evolve and distort as they’re passed along.
   </p>   
   <video style = "width: 50%;" src="./Demo.mov" controls></video> 
-  <img style="width: 500px; height: auto; transform: rotate(-90deg);" src="Mounted_Final.JPG" alt="Final">
+  <div style="display: inline-block; margin: 20px 0;">
+    <img style="width: 500px; height: auto; transform: rotate(-90deg); transform-origin: center center;" src="Mounted_Final.JPG" alt="Final">
+  </div>
 
 
    <h6>End Effector Design</h6> 
@@ -72,8 +74,7 @@
   This setup allows seamless digital-to-physical translation of drawings while supporting iterative “telephone-loop” redrawing through continuous server feedback.
   
 </p>
-<a id="btn" href="./https://github.com/theotarr/plotter" > See our code! 
-</a>
+<a id="btn" href="https://github.com/theotarr/plotter" target="_blank" style="display:inline-block; padding:10px 18px; background:#333; color:white; border-radius:6px; text-decoration:none;">See our code!</a>
 
   <h6>Issues We Solved Through Iterations </h6>
      <p>Getting smooth enough motion (tight belt + microstepping)</p>
