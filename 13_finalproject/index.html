@@ -24,7 +24,7 @@
 <p class="margin"></p>
 
 <h3>Final Project: Smart Water Harvester </h3>
-
+<img style = "width: 65%" src="./whole.JPG" class="about-image">
 <h4>Background</h4>
 
 <p>After MVP week, I was encouraged by feedback to focus on producing a fully encapsulated, self-contained 
@@ -47,7 +47,7 @@
 <img style = "width: 65%" src="./finalproject_mockup.png" class="about-image">
 
 <h4>Designing the Flower</h4>
-
+<img style = "width: 65%" src="./ mesh_flower.JPG" class="about-image">
 <p>One of the first questions I tackled was what material would form the petals. I had originally
   based my project around/hoped to experiment with 3D printing different materials, inspired by some research papers I'd read about 
   the development of new 3D printed fog harvesting materials withhigh-resolution biomimetic geometries—cactus-spine–like microstructures, beetle-back bumps, or fine hydrophilic/hydrophobic patterning.
@@ -62,25 +62,25 @@
 </p>
 
 <p>I then followed these steps to fabricate the petals</p>
-<ul>
-  <li>I sketched and cut several petal-shaped pieces out of the metal mesh.</li>
-  <li>Because the mesh openings were relatively large, I layered two sheets for each petal to improve droplet formation and retention.</li>
-  <li>Fog collectors often perform better when their surfaces are slightly curved, as curvature helps droplets coalesce and run downward. So I shaped each petal with different degrees of curvature to test this effect.</li>
-  <li>Using epoxy resin, I attached three petals together at the base.</li>
-  <li>I formed a stem from rolled mesh and epoxied it to the petal cluster.</li>
-  <li>This created my first full flower prototype, with plans to create additional flowers and compare meshes, coatings, or materials.</li>
-</ul>
+<p>- I sketched and cut several petal-shaped pieces out of the metal mesh.</p>
+<p>- Because the mesh openings were relatively large, I layered two sheets for each petal to improve droplet formation and retention.</p>
+<p>- Fog collectors often perform better when their surfaces are slightly curved, as curvature helps droplets coalesce and run downward. So I shaped each petal with different degrees of curvature to test this effect.</p>
+<p>- Using epoxy resin, I attached three petals together at the base.</p>
+<p>- I formed a stem from rolled mesh and epoxied it to the petal cluster.</p>
+<p>- This created my first full flower prototype, with plans to create additional flowers and compare meshes, coatings, or materials.</p>
+
 
 <p>This created my first full flower prototype, though I hope to create additional flowers and compare meshes, coatings, and materials in the future.</p>
 
 
 <h4>Collection Plate + Reservoir Box</h4>
+
  <p>To actually collect and store the water the mesh flower accumulated, I added a collection plate and reservoir box beneath the flower.</p>
   
+ <img style = "width: 65%" src="./collection_plate.jpg" class="about-image">
  <p>For the collection plate, I found a STL/mesh of a geometric, shallow dish and imported it into Fusion 360. There, I cut a hole into the center of the plate 
   to allow collected water to drain downward into the reservoir. I then 3D printed it in PLA. To guide droplets toward the center more reliably, I added thin hot-glue lines that act as simple hydrophilic channels—primitive but surprisingly effective at encouraging laminar flow.
   </p>
-
   <p>
     The reservoir is a 3D-printed rectangular container designed to hold and measure the harvested water. 
     It includes a fitted lid, a circular inlet aligned precisely with the collection plate above, and a small 
@@ -92,6 +92,8 @@
     This ensures that all harvested water flows directly into the reservoir, where it can be measured by the capacitive sensor without loss or leakage.</p>
    </p>
 
+   <img style = "width: 65%" src="./funnel.JPG" class="about-image">
+
    <p>Together, these components form a simple but effective path:
     Mesh Flower → Collection Plate → Funnel → Reservoir → Sensor → Cloud Alert</p>
 
@@ -99,24 +101,32 @@
 
   <p>Earlier in the semester (Weeks 6–7), I experimented less successfully with several water-level sensing strategies. For the final project,
      I created a much more stable capacitive sensor, inspired by tutorials using the ESP32’s built-in touchRead() pins.</p>
+     <iframe width="1038" height="584" src="https://www.youtube.com/embed/40TjjWLljaU?list=LL" title="DIY Capacitive Water Level Sensor using ESP32 Touch Read function" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+  <img style = "width: 65%" src="./sensor.jpg" class="about-image">
   <p>Fabrication steps included:</p>
   <p>
-    - Laminated two parallel strips of copper tape between thin plastic sheets to act as electrodes.</li>
-    - Soldered wiring to each strip and wired it up to a breadboard/ESP32 sensor. </li>
-    - Superglued the sensor to the interior wall of the reservoir, with the electrodes fully submerged as water fills.</li>
+    - Laminated two parallel strips of copper tape between thin plastic sheets to act as electrodes.
+  </p>
+  - Soldered wiring to each strip and wired it up to a breadboard andESP32 sensor. 
+
+  <p>
+
+<p>
+    - Superglued the sensor to the interior wall of the reservoir, with the electrodes fully submerged as water fills.
+   </p>
+   <p>
     - Calibrated the sensor for different water levels using Arduino code, a serial monitor reading capacitance values, known water heights, and a linear approximation function.</li>
   </p>
   
-  <iframe width="1038" height="584" src="https://www.youtube.com/embed/40TjjWLljaU?list=LL" title="DIY Capacitive Water Level Sensor using ESP32 Touch Read function" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
   <p>
     To make the project feel truly "smart," I programmed the ESP32 to send a Notifo (NTFY) alert whenever the water level exceeded 25 mm. See W9 documentation for more details.
   </p>
 
   <h4>Enclosures</h4>
-  <p>
-
+ 
+<img style = "width: 65%" src="./cardboard.jpg" class="about-image">
+<p>
     To keep all electronics protected and reasonably weather-resistant, I designed a base enclosure 
     to sit at the bottom of the collection plate and house the reservoir box, ESP32, breadboard, wiring and sensors,
      and a power bank. </p>
