@@ -101,12 +101,12 @@
      I created a much more stable capacitive sensor, inspired by tutorials using the ESP32’s built-in touchRead() pins.</p>
 
   <p>Fabrication steps included:</p>
-  <ul>
-    <li>Laminated two parallel strips of copper tape between thin plastic sheets to act as electrodes.</li>
-    <li>Soldered wiring to each strip and wired it up to a breadboard/ESP32 sensor. </li>
-    <li>Superglued the sensor to the interior wall of the reservoir, with the electrodes fully submerged as water fills.</li>
-    <li>Calibrated the sensor for different water levels using Arduino code, a serial monitor reading capacitance values, known water heights, and a linear approximation function.</li>
-  </ul>
+  <p>
+    - Laminated two parallel strips of copper tape between thin plastic sheets to act as electrodes.</li>
+    - Soldered wiring to each strip and wired it up to a breadboard/ESP32 sensor. </li>
+    - Superglued the sensor to the interior wall of the reservoir, with the electrodes fully submerged as water fills.</li>
+    - Calibrated the sensor for different water levels using Arduino code, a serial monitor reading capacitance values, known water heights, and a linear approximation function.</li>
+  </p>
 
   <p>
     To make the project feel truly "smart," I programmed the ESP32 to send a Notifo (NTFY) alert whenever the water level exceeded 25 mm. See W9 documentation for more details.
