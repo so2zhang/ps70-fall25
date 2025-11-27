@@ -75,8 +75,8 @@ nav {
   z-index: 1000;
   background: transparent !important;
   color: #2d4a2d;
-  margin: 0;
-  padding: 30px 0px;
+  margin: 0 !important;
+  padding: 30px 0px !important;
   box-shadow: none !important;
   border: none !important;
   border-top: none !important;
@@ -84,8 +84,13 @@ nav {
   outline: none !important;
 }
 
-/* Override Bootstrap navbar defaults */
-.navbar {
+/* More aggressive Bootstrap navbar overrides */
+.navbar,
+.navbar.navbar-expand-sm,
+.navbar.navbar-dark {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
   background-color: transparent !important;
   background: transparent !important;
 }
@@ -97,15 +102,28 @@ nav {
 
 /* Make sure container inside nav is also transparent */
 nav .container-fluid {
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   background: transparent !important;
   background-color: transparent !important;
+}
+
+/* Universal reset for home page */
+html.home-page,
+html.home-page body,
+html.home-page nav,
+html.home-page .navbar {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
 }
 
 /* Background video styling */
 #background-video {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0 !important;
+  left: 0 !important;
   width: 100vw;
   height: 100vh;
   min-width: 100%;
@@ -113,6 +131,8 @@ nav .container-fluid {
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .about-image {
