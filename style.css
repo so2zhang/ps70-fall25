@@ -122,10 +122,9 @@ nav {
 }
 
 #btn {
-  border-radius: 30px;
   padding: 12px 25px;
-  color: #2d4a2d;
-  transition: all 0.3s ease;
+  background-color: #2d4a2d;  /* Add background color */
+  color: #f1e1c7;  /* Light text on dark background */
   text-decoration: none;
   display: inline-block;
 }
