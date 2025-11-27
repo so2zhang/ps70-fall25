@@ -7,9 +7,17 @@ body {
     padding-top: 0px !important;
   }
 
-/* Make body background transparent on home page only */
+/* Make body and html background transparent on home page only */
+html.home-page,
 body.home-page {
     background: transparent !important;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+html {
+    background: #f1e1c7;
 }
 
 
@@ -92,8 +100,10 @@ nav .container-fluid {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
   z-index: -1;
   pointer-events: none;
