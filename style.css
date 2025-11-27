@@ -7,15 +7,6 @@ body {
     padding-top: 0px !important;
   }
 
-.textcontainer {
-  padding: 2% 10%;
-  background-color: transparent;
-  border-radius: 0;
-  margin: 20px;
-  box-shadow: none;
-  backdrop-filter: none;
-  position: relative;
-}
 
 p {
   font-size: 16px;
