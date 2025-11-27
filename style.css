@@ -212,7 +212,6 @@ nav .container-fluid {
 }
 
 .container-fluid.bg-3 .col-sm-4 img {
-  border-radius: 15px;
   box-shadow: 0 8px 25px rgba(45, 62, 45, 0.2);
   transition: all 0.3s ease;
   margin-bottom: 15px;
@@ -259,7 +258,6 @@ code {
 img, video {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
   box-shadow: 0 8px 25px rgba(45, 62, 45, 0.15);
   margin: 20px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
