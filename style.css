@@ -55,7 +55,7 @@ a {
 nav {
   position: relative;
   z-index: 1000;
-  background: transpaerent;
+  background: transparent !important;
   color: #2d4a2d;
   padding: 30px 0px;
   box-shadow: none !important;
@@ -63,6 +63,23 @@ nav {
   border-top: none !important;
   border-bottom: none !important;
   outline: none !important;
+}
+
+/* Override Bootstrap navbar defaults */
+.navbar {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.navbar-dark {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Make sure container inside nav is also transparent */
+nav .container-fluid {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Background video styling */
