@@ -2,18 +2,18 @@ body {
     font: 20px "Times New Roman", "Calibri", serif;
     font-weight: 500;
     line-height: 1.8;
-    color: #2d3e2d;
+    color: #2d4a2d;
     background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe3 100%);
     padding-top: 0px !important;
   }
 
 .textcontainer {
   padding: 2% 10%;
-  background-color: rgba(248, 245, 240, 0.8);
-  border-radius: 20px;
+  background-color: transparent;
+  border-radius: 0;
   margin: 20px;
-  box-shadow: 0 10px 30px rgba(45, 62, 45, 0.1);
-  backdrop-filter: blur(10px);
+  box-shadow: none;
+  backdrop-filter: none;
   position: relative;
 }
 
@@ -27,21 +27,21 @@ p {
 
 /* Typography improvements */
 h1, h2, h3, h4, h5, h6 {
-  color: #2d3e2d;
+  color: #2d4a2d;
   font-weight: 600;
   margin-top: 30px;
   margin-bottom: 15px;
 }
 
 h3 {
-  border-bottom: 3px solid #8a9a8a;
+  border-bottom: 3px solid #6b8e6b;
   padding-bottom: 10px;
-  color: #3d5a3d;
+  color: #2d4a2d;
 }
 
 h4 {
-  color: #5a7a5a;
-  border-left: 4px solid #8a9a8a;
+  color: #2d4a2d;
+  border-left: 4px solid #6b8e6b;
   padding-left: 15px;
 }
 
@@ -52,13 +52,13 @@ h4 {
 }
 
 a {
-  color: #3d5a3d;
+  color: #2d4a2d;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #5a7a5a;
+  color: #3d6a3d;
 }
 
 .container-fluid {
@@ -68,7 +68,7 @@ a:hover {
 
 nav {
   background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe3 100%);
-  color: #2d3e2d;
+  color: #2d4a2d;
   padding: 30px 0px;
   box-shadow: none;
   border-bottom: none;
@@ -98,9 +98,13 @@ nav {
 .nav-title{
   margin-left: 15px;
   margin-right: 15px;
-  color: #2d3e2d;
+  color: #2d4a2d !important;
   font-weight: 600;
   font-family: "Times New Roman", serif;
+}
+
+.navbar-dark .nav-title {
+  color: #2d4a2d !important;
 }
 
 .nav-link {
@@ -108,7 +112,7 @@ nav {
   border-radius: 0;
   padding: 0;
   background-color: transparent;
-  color: #2d3e2d;
+  color: #2d4a2d !important;
   transition: color 0.3s ease;
   font-family: "Times New Roman", serif;
   text-decoration: none;
@@ -116,8 +120,16 @@ nav {
 }
 
 .nav-link:hover {
-  color: #2d3e2d;
+  color: #2d4a2d !important;
   text-decoration: underline;
+}
+
+.navbar-dark .nav-link {
+  color: #2d4a2d !important;
+}
+
+.navbar-dark .nav-link:hover {
+  color: #2d4a2d !important;
 }
 
 #btn {
@@ -181,14 +193,14 @@ nav {
 }
 
 .container-fluid.bg-3 .col-sm-4 a {
-  color: #3d5a3d;
+  color: #2d4a2d;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .container-fluid.bg-3 .col-sm-4 a:hover {
-  color: #5a7a5a;
+  color: #3d6a3d;
 }
 
 .center-row {
@@ -274,7 +286,7 @@ video {
 
 /* Caption styling */
 .caption {
-  color: #5a7a5a;
+  color: #2d4a2d;
   font-size: 14px;
   text-align: center;
   font-style: italic;
