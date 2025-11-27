@@ -7,6 +7,11 @@ body {
     padding-top: 0px !important;
   }
 
+/* Make body background transparent on home page only */
+body.home-page {
+    background: transparent !important;
+}
+
 
 p {
   font-size: 16px;
