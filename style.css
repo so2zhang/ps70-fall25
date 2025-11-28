@@ -305,11 +305,12 @@ html.home-page .navbar {
 
 /* Project item - each image card */
 .project-item {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   color: inherit;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   grid-row-end: span 20; /* Default span */
 }
@@ -333,25 +334,15 @@ html.home-page .navbar {
   transform: scale(1.02);
 }
 
-/* Caption overlay - appears on hover */
+/* Caption below image - always visible */
 .project-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(45, 74, 45, 0.9);
-  color: #f1e1c7;
-  padding: 12px 15px;
+  margin-top: 10px;
+  text-align: center;
+  color: #2d4a2d;
   font-family: "Times New Roman", serif;
   font-size: 16px;
   font-weight: 600;
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.project-item:hover .project-caption {
-  transform: translateY(0);
+  padding: 0;
 }
 
 /* Size classes for different image heights */
