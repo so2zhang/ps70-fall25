@@ -207,15 +207,13 @@ html.home-page .navbar {
 
 #btn {
   padding: 10px 20px;
-  background-color: #2d4a2d;  /* Add background color */
-  color: #f1e1c7;  /* Light text on dark background */
+  background-color: #2d4a2d;
+  color: #f1e1c7;
   text-decoration: none;
-  display: inline-block;
-  margin: 20px 0;
-  margin-left: 0;
-  margin-right: auto;
-  width: fit-content;
-  text-align: center;
+  display: block;             /* or inline-block if you prefer */
+  max-width: 800px;           /* matches your text width */
+  margin: 20px auto;          /* centers the block */
+  text-align: left;
   font-size: 0.9em;
 }
 
