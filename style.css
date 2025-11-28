@@ -31,7 +31,7 @@ p {
   line-height: 1.7;
   margin-bottom: 20px;
   font-family: "Times New Roman", serif;
-  text-align: left;
+  text-align: left !important;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 30px;
   margin-bottom: 15px;
   font-family: "Times New Roman", serif;
-  text-align: left;
+  text-align: left !important;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -366,9 +366,24 @@ html.home-page .navbar {
 }
 
 .center-row p {
-  text-align: left;
+  text-align: left !important;
   margin: 20px auto;
   max-width: 100%;
+}
+
+/* Ensure textcontainer and all content inside is left-aligned */
+.textcontainer {
+  text-align: left !important;
+}
+
+.textcontainer p,
+.textcontainer h1,
+.textcontainer h2,
+.textcontainer h3,
+.textcontainer h4,
+.textcontainer h5,
+.textcontainer h6 {
+  text-align: left !important;
 }
 
 code {
