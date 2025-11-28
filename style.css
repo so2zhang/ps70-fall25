@@ -210,8 +210,8 @@ html.home-page .navbar {
   background-color: #2d4a2d;  /* Add background color */
   color: #f1e1c7;  /* Light text on dark background */
   text-decoration: none;
-  display: block;
-  margin: 20px auto;
+  display: inline-block;
+  margin: 20px 0;
   width: fit-content;
   text-align: center;
 }
@@ -278,6 +278,15 @@ html.home-page .navbar {
   padding: 40px 20px;
   max-width: 1400px;
   margin: 0 auto;
+  text-align: center;
+}
+
+.projects-container > * {
+  text-align: left;
+}
+
+.projects-intro {
+  text-align: center !important;
 }
 
 .projects-intro {
@@ -289,6 +298,8 @@ html.home-page .navbar {
   font-weight: 400;
   width: 100%;
   display: block;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Projects grid - simple grid layout */
@@ -423,6 +434,14 @@ iframe {
   display: block;
   margin: 20px auto;
   max-width: 100%;
+}
+
+/* Maintain aspect ratio for YouTube embeds */
+iframe[src*="youtube.com"],
+iframe[src*="youtu.be"] {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 800px;
   height: auto;
 }
 
