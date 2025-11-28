@@ -206,14 +206,17 @@ html.home-page .navbar {
 }
 
 #btn {
-  padding: 12px 25px;
+  padding: 10px 20px;
   background-color: #2d4a2d;  /* Add background color */
   color: #f1e1c7;  /* Light text on dark background */
   text-decoration: none;
   display: inline-block;
   margin: 20px 0;
+  margin-left: 0;
+  margin-right: auto;
   width: fit-content;
   text-align: center;
+  font-size: 0.9em;
 }
 
 #btn:hover {
