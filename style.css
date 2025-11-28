@@ -418,6 +418,14 @@ p img, p video {
   margin: 20px auto;
 }
 
+/* Center all iframes (YouTube embeds) */
+iframe {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
 
 
 /* Standard image sizes for consistency */

@@ -48,18 +48,18 @@
   <h6>End Effector Design</h6> 
   <p>Our end effector uses a servo-controlled Apple Pencil mount for precise up-and-down motion. While mechanically similar to the normal pen plotter, its novelty (Bobby approved!) lies in drawing directly on an iPad rather than paper, creating the digital–physical feedback loop.</p>
   <p>Servo for end effector: </p>
-  <video style = "width: 50%; display: block; margin: 20px 0;" src="./End_Effector.MOV" controls></video> 
+  <video style = "width: 50%; display: block; margin: 20px auto;" src="./End_Effector.MOV" controls></video> 
 
   <h6>Homing Sequence</h6>
    <p>
-    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—see below photos—to define the machine's zero position. Components then trigger the switches, allowing the plotter to reset accurately each time it powers on and maintain precise alignment between digital and physical coordinates. The homing code accounts for each axis’s step count so the return to origin remains repeatable.
-    <div style="display: flex; gap: 15px; align-items: flex-start; margin-top: 10px;">
-      <img style="width: 250px; height: auto;" src="hinge1.JPG" alt="Hinge 1 - limit switch placement">
-      <img style="width: 250px; height: auto;" src="hinge2.JPG" alt="Hinge 2 - limit switch placement">
-    </div>
+    We developed a reliable homing system using limit switches for precise calibration. Two switches are strategically placed—see below photos—to define the machine's zero position. Components then trigger the switches, allowing the plotter to reset accurately each time it powers on and maintain precise alignment between digital and physical coordinates. The homing code accounts for each axis's step count so the return to origin remains repeatable.
   </p>
+  <div style="display: flex; gap: 15px; align-items: flex-start; justify-content: center; margin: 20px auto; max-width: 600px;">
+    <img style="width: 250px; height: auto; display: block;" src="hinge1.JPG" alt="Hinge 1 - limit switch placement">
+    <img style="width: 250px; height: auto; display: block;" src="hinge2.JPG" alt="Hinge 2 - limit switch placement">
+  </div>
   <p>Homing interface photo: </p>
-  <img style="width: 250px; height: auto;" src="Homing_Interface.jpg" alt="Homing interface photo">
+  <img style="width: 250px; height: auto; display: block; margin: 20px auto;" src="Homing_Interface.jpg" alt="Homing interface photo">
   
   <p>Homing one axis:</p>
   <iframe width="420" height="315" src="https://www.youtube.com/embed/l308SvD5WA4" title="Homing one axis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -92,9 +92,9 @@
 
 
   <h6>Issues We Solved Through Iterations </h6>
-     <p><strong>Belt Tensioning & Motion Smoothness:</strong> Zip-tied the belt loop and added a 3D-printed tension clip to increase tension, then enabled microstepping on the stepper motors for smoother motion.</p>
-     <p><strong>iPad Mounting System:</strong> Kieran CNC-milled a custom wooden mount for Theo’s iPad so the Apple Pencil maintained the correct height/alignment (and it just looks sick).</p>
-     <p><strong>Limit Switch Reliability:</strong> Replaced faulty switches, adjusted their placement, and soldered the connections for a permanent installation.</p>
+     <p>Belt Tensioning & Motion Smoothness: Zip-tied the belt loop and added a 3D-printed tension clip to increase tension, then enabled microstepping on the stepper motors for smoother motion.</p>
+     <p>iPad Mounting System: Kieran CNC-milled a custom wooden mount for Theo’s iPad so the Apple Pencil maintained the correct height/alignment (and it just looks sick).</p>
+     <p>Limit Switch Reliability: Replaced faulty switches, adjusted their placement, and soldered the connections for a permanent installation.</p>
 
 
 </div>
