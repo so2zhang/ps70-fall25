@@ -210,11 +210,19 @@ html.home-page .navbar {
   background-color: #2d4a2d;
   color: #f1e1c7;
   text-decoration: none;
-  display: block;             /* or inline-block if you prefer */
-  max-width: 800px;           /* matches your text width */
-  margin: 20px auto;          /* centers the block */
-  text-align: left;
+  display: inline-block;
+  text-align: center;
   font-size: 0.9em;
+}
+
+.button-line {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.button-line #btn {
+  margin: 0;
 }
 
 #btn:hover {
