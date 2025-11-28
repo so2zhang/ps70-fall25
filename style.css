@@ -262,6 +262,95 @@ html.home-page .navbar {
   color: #3d6a3d;
 }
 
+/* Projects page styling - Masonry layout */
+.projects-container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects-intro {
+  text-align: center;
+  font-size: 18px;
+  color: #2d4a2d;
+  margin: 0 20px 40px 20px;
+  font-family: "Times New Roman", serif;
+  font-weight: 400;
+}
+
+/* Projects grid - masonry style */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 10px;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Project item - each image card */
+.project-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  grid-row-end: span 20; /* Default span */
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(45, 62, 45, 0.25);
+}
+
+/* Images maintain their natural aspect ratio */
+.project-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(45, 62, 45, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Caption overlay - appears on hover */
+.project-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(45, 74, 45, 0.9);
+  color: #f1e1c7;
+  padding: 12px 15px;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-caption {
+  transform: translateY(0);
+}
+
+/* Size classes for different image heights */
+.project-item.small {
+  grid-row-end: span 20;
+}
+
+.project-item.medium {
+  grid-row-end: span 30;
+}
+
+.project-item.large {
+  grid-row-end: span 40;
+}
+
 .center-row {
   display: flex;
   justify-content: center;
