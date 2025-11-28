@@ -312,7 +312,7 @@ html.home-page .navbar {
   position: relative;
   overflow: visible;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  grid-row-end: span 20; /* Default span */
+  align-items: stretch;
 }
 
 .project-item:hover {
@@ -328,6 +328,8 @@ html.home-page .navbar {
   object-fit: cover;
   box-shadow: 0 4px 15px rgba(45, 62, 45, 0.15);
   transition: transform 0.3s ease;
+  margin: 0;
+  padding: 0;
 }
 
 .project-item:hover img {
@@ -336,26 +338,28 @@ html.home-page .navbar {
 
 /* Caption below image - always visible */
 .project-caption {
-  margin-top: 10px;
+  margin-top: 8px;
+  margin-bottom: 0;
   text-align: center;
   color: #2d4a2d;
   font-family: "Times New Roman", serif;
   font-size: 16px;
   font-weight: 600;
   padding: 0;
+  line-height: 1.4;
 }
 
-/* Size classes for different image heights */
+/* Size classes for different image heights - adjust based on image aspect ratios */
 .project-item.small {
-  grid-row-end: span 20;
+  grid-row-end: span 25;
 }
 
 .project-item.medium {
-  grid-row-end: span 30;
+  grid-row-end: span 35;
 }
 
 .project-item.large {
-  grid-row-end: span 40;
+  grid-row-end: span 45;
 }
 
 .center-row {
@@ -384,15 +388,11 @@ code {
 img, video {
   max-width: 100%;
   height: auto;
-  box-shadow: 0 8px 25px rgba(45, 62, 45, 0.15);
   margin: 20px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-img:hover, video:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(45, 62, 45, 0.25);
-}
+
 
 /* Standard image sizes for consistency */
 .image-small {
