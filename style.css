@@ -273,18 +273,34 @@ html.home-page .navbar {
   text-align: center;
   font-size: 18px;
   color: #2d4a2d;
-  margin: 0 20px 40px 20px;
+  margin: 0 auto 40px auto;
   font-family: "Times New Roman", serif;
   font-weight: 400;
+  width: 100%;
+  display: block;
 }
 
 /* Projects grid - masonry style */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 10px;
   gap: 20px;
   padding: 0 20px;
+  max-width: 100%;
+}
+
+/* Responsive: 2 columns on medium screens, 1 on small */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Project item - each image card */
