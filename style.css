@@ -30,16 +30,20 @@ p {
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 20px;
-  font-family: "Times New Roman", serif;  /* Add this line */
-
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* Typography improvementss */
+/* Typography improvements */
 h1, h2, h3, h4, h5, h6 {
   color: #2d4a2d;
   font-weight: 600;
   margin-top: 30px;
   margin-bottom: 15px;
-  font-family: "Times New Roman", serif;  /* Add this line */
+  font-family: "Times New Roman", serif;
+  text-align: center;
 }
 
 h3 {
@@ -136,9 +140,10 @@ html.home-page .navbar {
 }
 
 .about-image {
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 10px;
+  display: block;
+  margin: 20px auto;
+  max-width: 65%;
+  height: auto;
 }
 
 
@@ -348,7 +353,17 @@ html.home-page .navbar {
 
 .center-row {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.center-row p {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 100%;
 }
 
 code {
@@ -372,8 +387,15 @@ code {
 img, video {
   max-width: 100%;
   height: auto;
-  margin: 20px 0;
+  margin: 20px auto;
+  display: block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prevent text wrapping around images */
+p img, p video {
+  display: block;
+  margin: 20px auto;
 }
 
 
@@ -447,10 +469,10 @@ video {
 
 /* About image specific styling */
 .about-image {
-  float: left;
-  margin-right: 25px;
-  margin-bottom: 15px;
-  width: 300px;
+  display: block;
+  margin: 20px auto;
+  max-width: 65%;
+  height: auto;
 }
 
 /* Responsive design */
