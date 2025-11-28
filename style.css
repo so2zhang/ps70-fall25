@@ -280,65 +280,63 @@ html.home-page .navbar {
   display: block;
 }
 
-/* Projects grid - masonry style */
+/* Projects grid - simple grid layout */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 10px;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem 2rem;
   padding: 0 20px;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
 }
 
 /* Responsive: 2 columns on medium screens, 1 on small */
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
   }
 }
 
 @media (max-width: 600px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
-/* Project item - each image card */
+/* Project item - each clickable card */
 .project-item {
   display: flex;
   flex-direction: column;
+  text-align: center;
   text-decoration: none;
   color: inherit;
-  position: relative;
-  overflow: visible;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  align-items: stretch;
-}
-
-.project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(45, 62, 45, 0.25);
+  width: 100%;
+  max-width: 300px;
 }
 
 /* Images maintain their natural aspect ratio */
 .project-item img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  margin: 0 auto;
+  transition: transform 0.25s ease, filter 0.25s ease;
   box-shadow: 0 4px 15px rgba(45, 62, 45, 0.15);
-  transition: transform 0.3s ease;
-  margin: 0;
-  padding: 0;
 }
 
+/* Hover effect - subtle lift and glow */
 .project-item:hover img {
-  transform: scale(1.02);
+  transform: translateY(-6px) scale(1.04);
+  filter: drop-shadow(0 8px 16px rgba(45, 62, 45, 0.2));
 }
 
 /* Caption below image - always visible */
 .project-caption {
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 0;
   text-align: center;
   color: #2d4a2d;
@@ -347,19 +345,6 @@ html.home-page .navbar {
   font-weight: 600;
   padding: 0;
   line-height: 1.4;
-}
-
-/* Size classes for different image heights - adjust based on image aspect ratios */
-.project-item.small {
-  grid-row-end: span 25;
-}
-
-.project-item.medium {
-  grid-row-end: span 35;
-}
-
-.project-item.large {
-  grid-row-end: span 45;
 }
 
 .center-row {
