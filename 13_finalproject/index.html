@@ -42,12 +42,9 @@
     but wraps it in an approachable, poetic, garden-scaled object inspired partly by Gardenia’s 
     project and the kinetic flower sculpture I created earlier in the semester.</p>
 
-    <p>I began by making an inspirational mockup using GPT, visualizing how the fog-harvesting flower could 
-      function both as a decorative object and as a small-scale atmospheric water collector.</p>
-
   <h4>Designing the Flower</h4>
 
-  <img style = "width: 65%;" src="./ mesh_flower.JPG" alt="Mesh flower prototype">
+  <img style = "width: 65%;" src="./final_flower.JPG" alt="Mesh flower prototype">
   <p>One of the first questions I tackled was what material would form the petals. I had originally
     based my project around/hoped to experiment with 3D printing different materials, inspired by some research papers I'd read about 
     the development of new 3D printed fog harvesting materials with high-resolution biomimetic geometries—cactus-spine–like microstructures, beetle-back bumps, or fine hydrophilic/hydrophobic patterning.
@@ -70,6 +67,7 @@
 
   <img style = "width: 65%;" src="./ mesh_flower.JPG" alt="Mesh flower prototype">
 
+  <p>Pictured above is my very first flower prototype.</p>
   <p>Later, to improve the aesthetics and functionality of the flower, I added a few more metal mesh petals, cut some additional pastic petals to 
     add some color/curve variation, and shortened the stem to make it more compact.</p>
 
@@ -115,7 +113,7 @@
       - Superglued the sensor to the interior wall of the reservoir, with the electrodes fully submerged as water fills.
     </p>
     <p>
-      - Calibrated the sensor for different water levels using Arduino code, a serial monitor reading capacitance values, known water heights, and a linear approximation function.</li>
+      - Calibrated the sensor for different water levels using Arduino code, a serial monitor reading capacitance values, known water heights, and a power approximation function.</li>
     </p>
     
     <p>
@@ -123,7 +121,8 @@
     </p>
 
     <h4>Enclosures</h4>
-  
+    <img style = "width: 65%;" src="./base_box.JPG" alt="outer electronics box">
+
   <p>
       To keep all electronics protected and reasonably weather-resistant, I designed a base enclosure 
       to sit at the bottom of the collection plate and house the reservoir box, ESP32, breadboard, wiring and sensors,
@@ -137,8 +136,12 @@
     <p>I then laser cut out another box using black acrylic. Before asembling all of the pieces, I first tested the kerf of the lazer cutter with a smaller square/smaller fingers to figure out the exact allowance i should take into account for a perfectly fitting box.</p>
     <img style = "width: 65%;" src="./kerf.jpg" alt="Kerf test">
 
+    <p>After a few trials testing out my project with the acrylic box, I realized that despite the kerf tests, there must have still be some microscopic gapping in the edges for the outer box and likely also the reservoir box, because my electronics were 
+      still getting a little bit wet/damp. This ended up frying one of my breadboards, so I had to swap that out. Then, I coated the edges of both boxes with silicone sealant to make them more water resistant.
+    </p>
+
     <p>I also 3D-printed two small boxes/mounts for the water cups and fog misters to sit on a height relatively level to the flower so as to better simulate the passage of mist.</p>
-    <img style = "width: 65%;" src="./cardboard.jpg" alt="Cardboard enclosure mockup">
+    <img style = "width: 65%;" src="./mounts.jpg" alt="Cup Mounts">
 
     <h4>Future Improvements</h4>
 
