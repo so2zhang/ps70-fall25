@@ -25,11 +25,10 @@
   <p class="margin"></p>
 
   <h3>Final Project: Smart Water Harvester </h3>
-  <img style = "width: 65%; height:auto;" src="./whole.JPG" alt="Complete water harvester assembly">
-
+  <video src="./Demo_Video.mp4" style = "width: 65%" controls></video> 
   <h4>Background</h4>
 
-  <p>After MVP week, I was encouraged by feedback to focus on producing a fully encapsulated, self-contained 
+  <p>After MVP week (see Week 7 for MVP documentation and additional details), I was encouraged by feedback to focus on producing a fully encapsulated, self-contained 
     project—one that functioned reliably at a small scale rather than attempting a miniaturized version
     of an oversized concept. My original proposal called for a modular fog-harvesting test platform 
     with interchangeable tiles. While exciting, it risked becoming too large to fabricate, store, or 
@@ -47,6 +46,7 @@
       function both as a decorative object and as a small-scale atmospheric water collector.</p>
 
   <h4>Designing the Flower</h4>
+
   <img style = "width: 65%;" src="./ mesh_flower.JPG" alt="Mesh flower prototype">
   <p>One of the first questions I tackled was what material would form the petals. I had originally
     based my project around/hoped to experiment with 3D printing different materials, inspired by some research papers I'd read about 
@@ -61,25 +61,25 @@
     both desirable qualities for fog collection.
   </p>
 
-  <p>I then followed these steps to fabricate the petals</p>
+  <p>I then followed these steps to fabricate my first flower prototype</p>
   <p>- I sketched and cut several petal-shaped pieces out of the metal mesh.</p>
   <p>- Because the mesh openings were relatively large, I layered two sheets for each petal to improve droplet formation and retention.</p>
   <p>- Fog collectors often perform better when their surfaces are slightly curved, as curvature helps droplets coalesce and run downward. So I shaped each petal with different degrees of curvature to test this effect.</p>
   <p>- Using epoxy resin, I attached three petals together at the base.</p>
-  <p>- I formed a stem from rolled mesh and epoxied it to the petal cluster.</p>
-  <p>- This created my first full flower prototype, with plans to create additional flowers and compare meshes, coatings, or materials.</p>
+  <p>- I formed a stem from rolled plastic mesh and epoxied it to the petal cluster.</p>
 
+  <img style = "width: 65%;" src="./ mesh_flower.JPG" alt="Mesh flower prototype">
 
-  <p>This created my first full flower prototype, though I hope to create additional flowers and compare meshes, coatings, and materials in the future.</p>
-
+  <p>Later, to improve the aesthetics and functionality of the flower, I added a few more metal mesh petals, cut some additional pastic petals to 
+    add some color/curve variation, and shortened the stem to make it more compact.</p>
 
   <h4>Collection Plate + Reservoir Box</h4>
 
   <p>To actually collect and store the water the mesh flower accumulated, I added a collection plate and reservoir box beneath the flower.</p>
     
   <img style = "width: 65%;" src="./collection_plate.jpg" alt="Collection plate with drainage hole">
-  <p>For the collection plate, I found a STL/mesh of a geometric, shallow dish and imported it into Fusion 360. There, I cut a hole into the center of the plate 
-    to allow collected water to drain downward into the reservoir. I then 3D printed it in PLA. To guide droplets toward the center more reliably, I added thin hot-glue lines that act as simple hydrophilic channels—primitive but surprisingly effective at encouraging laminar flow.
+  <p>For the collection plate, I 3D printed a cool geometric/shallow dish in PLA with a hole in its center to allow collected water to drain downward into the reservoir. 
+    To guide droplets toward the center more reliably, I added thin hot-glue lines that act as simple hydrophilic channels—primitive but surprisingly effective at encouraging laminar flow.
     </p>
     <p>
       The reservoir is a 3D-printed rectangular container designed to hold and measure the harvested water. 
@@ -124,7 +124,6 @@
 
     <h4>Enclosures</h4>
   
-  <img style = "width: 65%;" src="./cardboard.jpg" alt="Cardboard enclosure mockup">
   <p>
       To keep all electronics protected and reasonably weather-resistant, I designed a base enclosure 
       to sit at the bottom of the collection plate and house the reservoir box, ESP32, breadboard, wiring and sensors,
@@ -132,28 +131,23 @@
 
     <p>
       The first version was a cardboard mockup since I wasn't sure of the exact dimensions I wanted the box to be yet. It was functional but too tall. 
-      A laser-cut plywood version is next on my list, optimized for portability, cable routing, and structural rigidity.</p>
     </p>
-      
-    <h4>Future Improvements/Unfinished Tasks</h4>
+    <img style = "width: 65%;" src="./cardboard.jpg" alt="Cardboard enclosure mockup">
+
+    <p>I then laser cut out another box using black acrylic. Before asembling all of the pieces, I first tested the kerf of the lazer cutter with a smaller square/smaller fingers to figure out the exact allowance i should take into account for a perfectly fitting box.</p>
+    <img style = "width: 65%;" src="./kerf.jpg" alt="Kerf test">
+
+    <p>I also 3D-printed two small boxes/mounts for the water cups and fog misters to sit on a height relatively level to the flower so as to better simulate the passage of mist.</p>
+    <img style = "width: 65%;" src="./cardboard.jpg" alt="Cardboard enclosure mockup">
+
+    <h4>Future Improvements</h4>
 
     <p>
       Several improvements are pending or under exploration:
       
-      1. A Full fog-testing enclosure
-      I plan to build a large acrylic or plastic box that holds:
-      
-      two ultrasonic water atomizers,
-      
-      water containers for the atomizers,
-      
-      and a mounting frame for the flower.
-      
-      This will allow for controlled 20–30 minute fog tests.
-      
-      2.Material exploration
+      1.Material exploration
       The current mesh works decently, but droplet capture efficiency could be much better.
-      I want to test:
+      It'd be fun to test and compare:
 
       finer plastic meshes,
       
@@ -165,8 +159,14 @@
       
       3D-printed lattice structures with varying roughness.
       
-      3. Additional flowers + branching support structure
-      Building 3–5 flowers would allow for more water collection and a more sculptural installation</p>
+      2. Water Resistance and Electronic Component Minituarization
+      I'd like to miniaturize the ESP32 and other components to make the project more portable and self-contained. Particularly, potentially experimenting with a smaller coin battery to power the ESP 32 instead 
+      of the current slightly clunky powerbank, and sodering the esp32/wires to a solderable/smaller breadboard to make it more compact.
+      This would free up additional space. 
+
+      I also noticed after conducting afew repetitive tests that water seemed to be slightly seeping into the bottom/corners of the outer electronics box. In the first few trials, this problem ended up wrecking 
+      one of my breadboards. Given smaller electronics, 
+      it'd be great to make an even smaller container that contains just the electronic components inside the larger outer encloser to make it more water resistant.
 
   
   </div>
