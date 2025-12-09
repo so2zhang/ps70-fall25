@@ -143,33 +143,65 @@
     <p>I also 3D-printed two small boxes/mounts for the water cups and fog misters to sit on a height relatively level to the flower so as to better simulate the passage of mist.</p>
     <img style = "width: 65%;" src="./mounts.jpg" alt="Cup Mounts">
 
+    <h4>Code</h4>
+    <p>Embedded below is the code I uploaded to the ESP32 to send NTFY alerts both periodically with water level readings as well as an alert when the water level readings exceed 25mm.</p>
+    <iframe src="https://app.arduino.cc/sketches/552a581e-0320-41ed-b545-582f55c0fc00?view-mode=embed" style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
     <h4>Future Improvements</h4>
 
     <p>
       Several improvements are pending or under exploration:
-      
+    </p>
+    
+    <p>
       1.Material exploration
+    </p>
+    
+    <p>
       The current mesh works decently, but droplet capture efficiency could be much better.
+    </p>
+    
+    <p>
       It'd be fun to test and compare:
+    </p>
 
+    <p>
       finer plastic meshes,
-      
+    </p>
+    
+    <p>
       nylon fabrics,
-      
+    </p>
+    
+    <p>
       hydrophilic coatings (PVA, Plasti-Dip variants),
-      
+    </p>
+    
+    <p>
       hydrophobic contrast strips (silicone spray),
-      
+    </p>
+    
+    <p>
       3D-printed lattice structures with varying roughness.
-      
+    </p>
+    
+    <p>
       2. Water Resistance and Electronic Component Minituarization
+    </p>
+    
+    <p>
       I'd like to miniaturize the ESP32 and other components to make the project more portable and self-contained. Particularly, potentially experimenting with a smaller coin battery to power the ESP 32 instead 
       of the current slightly clunky powerbank, and sodering the esp32/wires to a solderable/smaller breadboard to make it more compact.
+    </p>
+    
+    <p>
       This would free up additional space. 
+    </p>
 
+    <p>
       I also noticed after conducting afew repetitive tests that water seemed to be slightly seeping into the bottom/corners of the outer electronics box. In the first few trials, this problem ended up wrecking 
       one of my breadboards. Given smaller electronics, 
       it'd be great to make an even smaller container that contains just the electronic components inside the larger outer encloser to make it more water resistant.
+    </p>
 
   
   </div>
